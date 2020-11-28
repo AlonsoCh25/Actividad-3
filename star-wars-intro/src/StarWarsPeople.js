@@ -7,13 +7,11 @@ export default class StarWarsPeople extends React.Component {
         this.state = {
             characters: []
         }
-        this.loadData = this.loadData.bind(this); //This is to make the load data aware of the context of the class
+        this.loadData = this.loadData.bind(this);
     }
-
     componentDidMount() {
         this.loadData();
     }
-
     render() {
         if (this.state.characters.length === 0) {
             return <>No data found</>
@@ -33,7 +31,6 @@ export default class StarWarsPeople extends React.Component {
             </table>
         );
     }
-
     async loadData() {
         const response = await fetch("https://swapi.dev/api/people/");
         const parsedResponse = await response.json();
@@ -42,3 +39,4 @@ export default class StarWarsPeople extends React.Component {
         })
     }
 }
+

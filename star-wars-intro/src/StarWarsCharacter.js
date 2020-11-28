@@ -11,3 +11,4 @@ export default class StarWarsCharacter extends React.Component {
         );
     }
 }
+
